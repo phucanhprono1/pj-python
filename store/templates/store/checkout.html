@@ -7,32 +7,30 @@
 				<form id="form">
 					<div id="user-info">
 						<div class="form-field">
-							<input required class="form-control" type="text" name="name" placeholder="Name..">
+							<input required class="form-control" type="text" name="name" placeholder="Họ và tên">
 						</div>
 						<div class="form-field">
-							<input required class="form-control" type="email" name="email" placeholder="Email..">
+							<input required class="form-control" type="email" name="email" placeholder="Email">
+						</div>
+						<div class="form-field">
+							<input required class="form-control" type="number" name="number" placeholder="Số điện thoại">
 						</div>
 					</div>
 					
 					<div id="shipping-info">
 						<hr>
-						<p>Shipping Information:</p>
+						<p>Thông tin vận chuyển:</p>
 						<hr>
 						<div class="form-field">
-							<input class="form-control" type="text" name="address" placeholder="Address..">
+							<input class="form-control" type="text" name="address" placeholder="Địa chỉ">
 						</div>
 						<div class="form-field">
-							<input class="form-control" type="text" name="city" placeholder="City..">
+							<input class="form-control" type="text" name="city" placeholder="Quận/Huyện">
 						</div>
 						<div class="form-field">
-							<input class="form-control" type="text" name="state" placeholder="State..">
+							<input class="form-control" type="text" name="state" placeholder="Tỉnh/Thành phố">
 						</div>
-						<div class="form-field">
-							<input class="form-control" type="text" name="zipcode" placeholder="Zip code..">
-						</div>
-						<div class="form-field">
-							<input class="form-control" type="text" name="country" placeholder="Zip code..">
-						</div>
+						
 					</div>
 
 					<hr>
@@ -42,7 +40,7 @@
 
 			<br>
 			<div class="box-element hidden" id="payment-info">
-				<small>Paypal Options</small>
+				<small>Thanh toán bằng ví điện tử</small>
 				<!--<button id="make-payment">Make payment</button>-->
 				<div id="paypal-button-container"></div>
 			</div>
@@ -51,9 +49,9 @@
 
 		<div class="col-lg-6">
 			<div class="box-element">
-				<a  class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Back to Cart</a>
+				<a  class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Quay lại giỏ hàng</a>
 				<hr>
-				<h3>Order Summary</h3>
+				<h4>Đơn hàng</h4>
 				<hr>
 				{% for item in items %}
 				<div class="cart-row">
@@ -63,8 +61,8 @@
 					<div style="flex:1"><p>x{{item.quantity}}</p></div>
 				</div>
 				{% endfor %}
-				<h5>Items:   {{order.get_cart_items}}</h5>
-				<h5>Total:   ${{order.get_cart_total|floatformat:2}}</h5>
+				<h5>Món hàng:   {{order.get_cart_items}}</h5>
+				<h5>Tổng:   ${{order.get_cart_total|floatformat:2}}</h5>
 			</div>
 		</div>
 	</div>
